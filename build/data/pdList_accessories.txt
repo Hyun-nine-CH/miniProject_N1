@@ -1,0 +1,10 @@
+AC-001,Deluxe Stand,거치대,25000,25
+AC-002,Ultra Capo,카포,18000,40
+AC-003,Grip Pick Set,픽,8000,100
+AC-004,Leather Strap,스트랩,27000,25
+AC-005,Portable Stand,거치대,20000,35
+AC-006,Metal Capo,카포,22000,30
+AC-007,Flex Picks,픽,6000,90
+AC-008,Nylon Strap,스트랩,15000,50
+AC-009,Classic Stand,거치대,23000,20
+AC-010,Quick Capo,카포,19000,28

@@ -1,0 +1,10 @@
+CB-001,GTX-10L,Mogami,35000,50
+CB-002,Classic Series 10,Fender,28000,40
+CB-003,RA Cables,Planet Waves,30000,35
+CB-004,RockBoard RBO,Warwick,25000,60
+CB-005,Livewire Advantage,Livewire,27000,50
+CB-006,Instrument Cable,Hosa,23000,45
+CB-007,Tour Grade Cable,Ernie Ball,34000,30
+CB-008,Silent Cable,Neutrik,42000,20
+CB-009,Custom Pro,Gator,32000,25
+CB-010,Stage Series,Samson,30000,30

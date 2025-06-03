@@ -1,0 +1,10 @@
+TN-001,Pitchclip 2+,Korg,24000,50
+TN-002,NS Micro D’Addario,D'Addario,28000,40
+TN-003,TU-3,BOSS,85000,20
+TN-004,Polytune 3,TC Electronic,120000,15
+TN-005,CT-20,Cherub,10000,60
+TN-006,ST-300,Peterson,200000,10
+TN-007,Snark SN5X,Snark,19000,45
+TN-008,Clip-On Tuner,Yamaha,25000,35
+TN-009,Super Tight,Snark,22000,30
+TN-010,Pitchhawk-U,Gallien-Krueger,27000,25

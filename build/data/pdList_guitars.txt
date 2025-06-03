@@ -1,0 +1,100 @@
+GTR001,Explorer,ESP,Superstrat,872637,15
+GTR002,RG,Ibanez,Hollow,1712486,25
+GTR003,Flying V,Schecter,Superstrat,2043700,30
+GTR004,Explorer,Gretsch,Telecaster,2890039,24
+GTR005,Soloist,Yamaha,Semi-Hollow,886152,14
+GTR006,Les Paul,Gibson,Hollow,1414189,30
+GTR007,Telecaster,Gretsch,Hollow,2606914,29
+GTR008,Jazzmaster,Gretsch,Jazz,1562915,5
+GTR009,Jazzmaster,Ibanez,Telecaster,1173630,13
+GTR010,Explorer,Jackson,Les Paul,1974986,11
+GTR011,Les Paul,Fender,Superstrat,1998802,18
+GTR012,Superstrat,Gibson,Les Paul,2526383,23
+GTR013,Soloist,Gretsch,Hollow,817340,29
+GTR014,Stratocaster,Jackson,Superstrat,2157960,26
+GTR015,Superstrat,Suhr,Les Paul,2262105,14
+GTR016,RG,Ibanez,Telecaster,1299906,24
+GTR017,RG,Yamaha,Telecaster,2419485,24
+GTR018,Telecaster,Yamaha,Stratocaster,963589,22
+GTR019,Les Paul,PRS,Superstrat,1108146,18
+GTR020,Les Paul,PRS,Semi-Hollow,1885472,23
+GTR021,SG,Schecter,Superstrat,1211620,7
+GTR022,Flying V,Jackson,Telecaster,2435811,11
+GTR023,Jazzmaster,Fender,Semi-Hollow,2628240,11
+GTR024,Flying V,Gretsch,Superstrat,1050542,10
+GTR025,SG,Ibanez,Semi-Hollow,1587886,29
+GTR026,Jazzmaster,Schecter,Stratocaster,2720608,19
+GTR027,Superstrat,Schecter,Hollow,2317674,27
+GTR028,Flying V,Yamaha,Stratocaster,1537445,13
+GTR029,Soloist,Suhr,Superstrat,848437,6
+GTR030,RG,Gibson,Hollow,2659199,7
+GTR031,SG,Ibanez,Semi-Hollow,1946252,26
+GTR032,Les Paul,Gretsch,Les Paul,2913325,24
+GTR033,Jazzmaster,Fender,Semi-Hollow,1674802,25
+GTR034,SG,ESP,Telecaster,1052394,12
+GTR035,Superstrat,Ibanez,Telecaster,1545953,17
+GTR036,Telecaster,Fender,Semi-Hollow,802613,30
+GTR037,Telecaster,ESP,Hollow,2259458,22
+GTR038,Jazzmaster,PRS,Les Paul,1777789,8
+GTR039,Jazzmaster,Gibson,Stratocaster,1355126,17
+GTR040,Soloist,ESP,Jazz,891439,13
+GTR041,Explorer,Schecter,Stratocaster,1574239,23
+GTR042,Telecaster,PRS,Les Paul,1562490,12
+GTR043,Telecaster,Yamaha,Jazz,1499323,26
+GTR044,Soloist,Ibanez,Semi-Hollow,2702614,26
+GTR045,Superstrat,PRS,Hollow,2677095,20
+GTR046,Telecaster,Suhr,Hollow,916855,20
+GTR047,SG,Suhr,Stratocaster,1361385,24
+GTR048,Stratocaster,PRS,Telecaster,2917642,19
+GTR049,Stratocaster,Gibson,Superstrat,2146204,20
+GTR050,Stratocaster,Gretsch,Les Paul,2495740,11
+GTR051,SG,ESP,Telecaster,876723,19
+GTR052,Jazzmaster,Schecter,Stratocaster,2065919,25
+GTR053,Soloist,Fender,Hollow,1574565,27
+GTR054,RG,Fender,Jazz,2535211,17
+GTR055,SG,Jackson,Telecaster,2322379,24
+GTR056,Stratocaster,Gretsch,Superstrat,1263101,11
+GTR057,Superstrat,PRS,Telecaster,2768740,21
+GTR058,Jazzmaster,Fender,Hollow,2596469,25
+GTR059,Les Paul,ESP,Telecaster,1228149,22
+GTR060,Explorer,PRS,Les Paul,1061522,12
+GTR061,Superstrat,Gretsch,Semi-Hollow,2699430,19
+GTR062,Flying V,Ibanez,Semi-Hollow,2629457,26
+GTR063,Explorer,Schecter,Hollow,1162330,27
+GTR064,Telecaster,Yamaha,Semi-Hollow,1194879,30
+GTR065,Telecaster,Fender,Jazz,1104101,13
+GTR066,Jazzmaster,Gretsch,Superstrat,937600,19
+GTR067,Explorer,Ibanez,Hollow,2564592,24
+GTR068,Stratocaster,Jackson,Stratocaster,938840,30
+GTR069,Explorer,ESP,Les Paul,1673725,17
+GTR070,Explorer,Yamaha,Stratocaster,876862,25
+GTR071,Soloist,Jackson,Jazz,2717364,5
+GTR072,Telecaster,PRS,Telecaster,1939647,24
+GTR073,Superstrat,Gibson,Superstrat,2966970,28
+GTR074,Jazzmaster,PRS,Semi-Hollow,1887580,6
+GTR075,RG,Gibson,Telecaster,976084,18
+GTR076,Stratocaster,ESP,Superstrat,2980006,28
+GTR077,Explorer,ESP,Jazz,2448873,27
+GTR078,RG,Suhr,Semi-Hollow,1655932,28
+GTR079,Soloist,Schecter,Telecaster,1061214,19
+GTR080,Explorer,Jackson,Les Paul,1708465,7
+GTR081,Jazzmaster,ESP,Telecaster,1925707,29
+GTR082,Jazzmaster,Jackson,Superstrat,1691352,9
+GTR083,Stratocaster,Gibson,Jazz,2394491,9
+GTR084,Jazzmaster,Gretsch,Superstrat,1751975,29
+GTR085,Jazzmaster,Suhr,Semi-Hollow,2509534,29
+GTR086,Flying V,Fender,Stratocaster,963699,12
+GTR087,RG,Gretsch,Stratocaster,1515297,7
+GTR088,Explorer,ESP,Jazz,1253820,17
+GTR089,Soloist,Fender,Semi-Hollow,2060525,7
+GTR090,Superstrat,PRS,Hollow,1211767,10
+GTR091,RG,Jackson,Telecaster,2472016,5
+GTR092,Stratocaster,Yamaha,Les Paul,835926,7
+GTR093,Soloist,PRS,Semi-Hollow,1594526,13
+GTR094,Soloist,PRS,Superstrat,1523001,23
+GTR095,Les Paul,Gibson,Les Paul,1448053,28
+GTR096,Explorer,Schecter,Semi-Hollow,2079989,20
+GTR097,Les Paul,Ibanez,Jazz,1065884,7
+GTR098,RG,Ibanez,Semi-Hollow,2389089,27
+GTR099,Soloist,Fender,Semi-Hollow,2353784,12
+GTR100,Telecaster,Gretsch,Telecaster,1953078,11

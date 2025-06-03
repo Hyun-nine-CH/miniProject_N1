@@ -1,0 +1,100 @@
+EFF001,OverdriveBoost,Line 6,Compressor,138274,23
+EFF002,EQMaster,Line 6,Looper,141499,23
+EFF003,DistortionX,Walrus Audio,Reverb,436333,40
+EFF004,EQMaster,Behringer,Compressor,214327,42
+EFF005,LooperLoop,TC Electronic,EQ,241635,45
+EFF006,FlangerJet,Mooer,Reverb,453502,47
+EFF007,ChorusDream,Mooer,Chorus,226151,26
+EFF008,ChorusDream,Mooer,EQ,356473,34
+EFF009,PhaserWave,Zoom,Looper,170353,37
+EFF010,ChorusDream,Walrus Audio,Reverb,123514,24
+EFF011,ChorusDream,Strymon,Looper,295341,47
+EFF012,DistortionX,Zoom,Chorus,142795,33
+EFF013,PhaserWave,Zoom,Looper,465650,48
+EFF014,ReverbX,Behringer,EQ,281027,42
+EFF015,PhaserWave,Walrus Audio,Overdrive,390380,31
+EFF016,DelayTime,TC Electronic,Phaser,324446,43
+EFF017,ChorusDream,Walrus Audio,Phaser,259689,24
+EFF018,FlangerJet,TC Electronic,Looper,117412,16
+EFF019,DistortionX,Line 6,Overdrive,259488,18
+EFF020,PhaserWave,Behringer,Looper,391255,37
+EFF021,CompressorPro,MXR,Overdrive,259394,36
+EFF022,EQMaster,TC Electronic,Phaser,328782,27
+EFF023,LooperLoop,MXR,Flanger,176790,41
+EFF024,CompressorPro,MXR,Compressor,373181,12
+EFF025,CompressorPro,Zoom,Delay,336115,23
+EFF026,OverdriveBoost,MXR,Phaser,485421,46
+EFF027,DistortionX,Line 6,Reverb,275910,50
+EFF028,PhaserWave,Electro-Harmonix,Phaser,277948,13
+EFF029,OverdriveBoost,Walrus Audio,Distortion,461460,42
+EFF030,ReverbX,Electro-Harmonix,Chorus,268034,23
+EFF031,EQMaster,Zoom,EQ,148633,26
+EFF032,PhaserWave,TC Electronic,Delay,420788,48
+EFF033,ChorusDream,Behringer,Phaser,172183,38
+EFF034,CompressorPro,Behringer,Looper,239685,38
+EFF035,CompressorPro,Behringer,Phaser,230353,45
+EFF036,LooperLoop,Strymon,Distortion,388908,35
+EFF037,EQMaster,MXR,Flanger,296199,36
+EFF038,DelayTime,MXR,Chorus,348170,36
+EFF039,OverdriveBoost,Zoom,Chorus,214338,25
+EFF040,ChorusDream,Zoom,EQ,492851,44
+EFF041,FlangerJet,Line 6,Overdrive,200939,29
+EFF042,OverdriveBoost,Walrus Audio,Delay,412295,17
+EFF043,LooperLoop,Behringer,Delay,372365,23
+EFF044,OverdriveBoost,Mooer,Delay,453841,44
+EFF045,DistortionX,Zoom,Compressor,358259,27
+EFF046,CompressorPro,Line 6,Reverb,364217,15
+EFF047,CompressorPro,Electro-Harmonix,Reverb,365469,29
+EFF048,FlangerJet,Boss,Distortion,209540,11
+EFF049,PhaserWave,Strymon,Looper,190201,31
+EFF050,OverdriveBoost,Mooer,Delay,400794,36
+EFF051,OverdriveBoost,TC Electronic,Delay,460171,27
+EFF052,CompressorPro,Strymon,Flanger,244217,37
+EFF053,ChorusDream,Line 6,Delay,431030,44
+EFF054,FlangerJet,Electro-Harmonix,Looper,476840,11
+EFF055,LooperLoop,Behringer,Overdrive,273234,18
+EFF056,CompressorPro,Strymon,EQ,325372,28
+EFF057,PhaserWave,Behringer,Delay,311267,14
+EFF058,OverdriveBoost,Mooer,Delay,242001,38
+EFF059,ChorusDream,Mooer,Looper,471946,14
+EFF060,ChorusDream,Mooer,Compressor,424454,28
+EFF061,PhaserWave,Mooer,Overdrive,147997,12
+EFF062,DelayTime,TC Electronic,Overdrive,314421,40
+EFF063,ReverbX,MXR,Delay,406932,11
+EFF064,PhaserWave,Zoom,Compressor,314023,19
+EFF065,DistortionX,Behringer,Distortion,407544,25
+EFF066,LooperLoop,MXR,Compressor,334650,15
+EFF067,CompressorPro,TC Electronic,Looper,253686,20
+EFF068,LooperLoop,Behringer,Chorus,149103,38
+EFF069,PhaserWave,TC Electronic,Reverb,101509,34
+EFF070,LooperLoop,Zoom,Reverb,422820,17
+EFF071,ReverbX,Strymon,Overdrive,369095,20
+EFF072,OverdriveBoost,Strymon,EQ,458338,44
+EFF073,ReverbX,Strymon,Chorus,325042,14
+EFF074,EQMaster,Behringer,Phaser,313235,12
+EFF075,OverdriveBoost,Line 6,Phaser,399510,34
+EFF076,OverdriveBoost,Mooer,Looper,267962,17
+EFF077,LooperLoop,Mooer,Chorus,216702,11
+EFF078,DelayTime,Walrus Audio,Chorus,343977,45
+EFF079,EQMaster,Mooer,EQ,292628,38
+EFF080,EQMaster,MXR,EQ,440479,29
+EFF081,ReverbX,Behringer,Overdrive,459799,23
+EFF082,DistortionX,Walrus Audio,Phaser,117264,39
+EFF083,OverdriveBoost,Boss,Delay,230861,32
+EFF084,ReverbX,TC Electronic,EQ,459186,19
+EFF085,CompressorPro,Behringer,EQ,225018,27
+EFF086,LooperLoop,TC Electronic,Delay,406745,26
+EFF087,ReverbX,Strymon,EQ,318897,24
+EFF088,ChorusDream,Boss,Compressor,281528,18
+EFF089,DelayTime,Electro-Harmonix,Phaser,345549,50
+EFF090,OverdriveBoost,Strymon,Reverb,237760,16
+EFF091,PhaserWave,TC Electronic,Flanger,463895,16
+EFF092,ReverbX,Mooer,Reverb,366455,47
+EFF093,OverdriveBoost,Mooer,Distortion,304933,29
+EFF094,ReverbX,TC Electronic,EQ,440676,20
+EFF095,EQMaster,Boss,Reverb,444342,44
+EFF096,EQMaster,Walrus Audio,Reverb,121008,24
+EFF097,EQMaster,Electro-Harmonix,Compressor,332929,34
+EFF098,EQMaster,TC Electronic,EQ,319316,26
+EFF099,CompressorPro,Strymon,Chorus,341880,44
+EFF100,PhaserWave,MXR,EQ,206171,20

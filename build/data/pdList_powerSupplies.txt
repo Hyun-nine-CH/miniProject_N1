@@ -1,0 +1,10 @@
+PW-001,Power Plant Jr,Harley Benton,75000,15
+PW-002,ISO-5,Voodoo Lab,160000,5
+PW-003,DC Brick,MXR,130000,8
+PW-004,Fuel Tank Jr,T-Rex,120000,7
+PW-005,CP-05,Caline,65000,20
+PW-006,Volto Cioks,Cioks,200000,3
+PW-007,Pure Tone Power,Joyfx,98000,10
+PW-008,PSU-10,Donner,55000,25
+PW-009,RockBoard ISO-5.2,Warwick,88000,12
+PW-010,Nova Power Supply,TC Electronic,110000,5
