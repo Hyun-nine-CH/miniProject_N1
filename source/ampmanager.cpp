@@ -175,6 +175,12 @@ void AmpManager::displayAmp() const { // const 지정 → 이 함수는 amps 벡
                 }
             }
 
+            // std::string::npos는 "찾을 수 없는 위치"를 의미하는 특수한 상수
+            // std::size_t 타입의 최대값을 의미하며, find() 함수 등에서 검색 실패를 나타낼 때 사용
+            // std::string::find() 함수는 찾지 못했을 때 npos를 반환
+            // std::size_t의 최대값은 대략 2^(64) - 1이며, 이는 64비트 시스템에서 약 18,446,744,073,709,551,615에 해당
+            // index로 나올 수 없는 값이므로, 이를 find() 함수에서 npos로 반환
+
             if (!found) {
                 std::cout << "일치하는 항목이 없습니다.\n";
             }

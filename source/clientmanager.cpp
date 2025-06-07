@@ -9,6 +9,9 @@
 #include "clientmanager.h"
 
 namespace ClientSystem {
+// ClientSystem 네임스페이스 안에 ClientManager 클래스 정의
+// 다수의 파일과 클래스가 얽혀 있을 때 유지보수에 유리함
+
 const std::string CLIENT_FILE = "data/clientlist.txt";
 
 inline std::string formatPhoneNumber(const std::string& phone) {
@@ -127,17 +130,17 @@ bool ClientManager::displayMenu() {
 
         switch (choice) {
             case 1:
-                displayInfo();
+                displayInfo(); // 고객 정보 보기
                 break;
             case 2:
-                inputClient();
+                inputClient(); // 고객 등록
                 break;
             case 3: {
                 displayInfo();
                 int key;
                 std::cout << "   Choose Key : ";
-                std::cin >> key;
-                std::cin.ignore(1000, '\n');
+                std::cin >> key; // 삭제할 고객의 ID 입력
+                std::cin.ignore(1000, '\n'); // 사용자 입력 후 남아 있는 개행 문자(\n)를 제거해서 다음 입력이 꼬이지 않도록 함
                 deleteClient(key);
                 break;
             }
@@ -147,7 +150,7 @@ bool ClientManager::displayMenu() {
                 std::cout << "   Choose Key : ";
                 std::cin >> key;
                 std::cin.ignore(1000, '\n');
-                modifyClient(key);
+                modifyClient(key); // 고객 정보 수정
                 break;
             }
             case 5:
@@ -160,17 +163,26 @@ bool ClientManager::displayMenu() {
     return true;
 }
 
-void ClientManager::displayInfo() {
+void ClientManager::displayInfo() { // 전체 고객 목록 출력
     while (true) {
         std::cout << "\n  ID  |   Name    | Phone Number |   Address\n";
         std::cout << "---------------------------------------------\n";
-        for (const auto& v : clientList) {
+        for (const auto& v : clientList) { // clientList는 std::map<int, Client*> 타입
+            // 키(int형 ID)와 값(Client* 포인터)의 쌍(pair)으로 구성된 자료구조
+            // v는 각 std::pair<int, Client*>를 의미
+            // auto&는 참조를 의미하고, const는 수정하지 않겠다는 뜻
+            // v.first는 고객 ID (int), v.second는 고객 객체를 가리키는 포인터 (Client*)
+
             Client* c = v.second;
+            // 해당 고객 객체의 포인터를 c라는 변수로 꺼내어 고객 정보에 접근
             std::cout << std::setw(5) << std::setfill('0') << std::right << c->id() << " | " << std::left;
             std::cout << std::setw(12) << std::setfill(' ') << c->getName() << " | ";
             std::cout << std::setw(12) << formatPhoneNumber(c->getPhoneNumber()) << " | ";
             std::cout << c->getAddress() << "\n";
-        }
+        } // 테이블 형식 (setw, setfill)으로 정렬
+        // std::setw(n)	→ n칸 너비 확보
+        // std::setfill(char) → 남는 칸 채울 문자
+        // std::right, std::left → 오른쪽 정렬, 왼쪽 정렬
 
         std::cout << "\n========= 키워드 검색 =========\n";
         std::cout << "1. 검색하기\n";
@@ -190,7 +202,7 @@ void ClientManager::displayInfo() {
             std::cout << "  ID  |   Name    | Phone Number |   Address\n";
             std::cout << "---------------------------------------------\n";
 
-            bool found = false;
+            bool found = false; // 기본 상태를 false로 설정
             for (const auto& v : clientList) {
                 Client* c = v.second;
                 if (std::to_string(c->id()).find(keyword) != std::string::npos ||
@@ -198,57 +210,76 @@ void ClientManager::displayInfo() {
                     c->getPhoneNumber().find(keyword) != std::string::npos ||
                     c->getAddress().find(keyword) != std::string::npos) {
 
+                    // std::string::npos는 "찾을 수 없는 위치"를 의미하는 특수한 상수
+                    // std::size_t 타입의 최대값을 의미하며, find() 함수 등에서 검색 실패를 나타낼 때 사용
+                    // std::string::find() 함수는 찾지 못했을 때 npos를 반환
+                    // std::size_t의 최대값은 대략 2^(64) - 1이며, 이는 64비트 시스템에서 약 18,446,744,073,709,551,615에 해당
+                    // index로 나올 수 없는 값이므로, 이를 find() 함수에서 npos로 반환
+
                     std::cout << std::setw(5) << std::setfill('0') << std::right << c->id() << " | " << std::left;
                     std::cout << std::setw(12) << std::setfill(' ') << c->getName() << " | ";
                     std::cout << std::setw(12) << formatPhoneNumber(c->getPhoneNumber()) << " | ";
                     std::cout << c->getAddress() << "\n";
                     found = true;
                 }
-            }
+            } // 찾았으면, 찾은 고객의 정보를 출력, 기본 상태에서 true로 찾았음을 표시
 
-            if (!found) {
+            if (!found) { // true가 아니면, 즉 찾은 고객이 없으면 아래의 문구 출력
                 std::cout << "일치하는 항목이 없습니다.\n";
             }
 
             std::cout << "\n확인을 했다면 Enter 키를 입력하세요";
-            std::cin.get();
+            std::cin.get(); // 여기서도 입력 대기용 버퍼 비우기 설정
+            // 사용자가 키보드를 입력하지 않는 한, 멈춰 있는 상황이 오고, 한 문자를 치면, 바로 어디론가 이동하는, 현재 프로그램만 종료하는 느낌으로 기폭제 역할을 함
         } else if (opt == 2) {
-            return;
+            return; // 상위 메뉴로 돌아감
         } else {
             std::cout << "잘못된 선택입니다.\n";
         }
     }
 }
 
-void ClientManager::addClient(Client* c) {
+void ClientManager::addClient(Client* c) { // Client* c → 새로운 고객 객체의 포인터
     clientList.insert({ c->id(), c });
+    // clientList → std::map<int, Client*> 형식의 맵으로,
+    // c->id() → 이 고객의 고유 ID를 가져옴, 그 후, insert({ c->id(), c }) → ID를 키로, 포인터를 값으로 넣음
     saveToFile();
 }
 
-int ClientManager::makeId() {
+int ClientManager::makeId() { // 고객 ID는 자동 증가 방식 (고객 입력 정보에 별도의 ID 입력 없는 것을 알 수 있음)
     if (clientList.empty()) {
         return 1;
     } else {
-        auto it = clientList.rbegin(); // reverse iterator로 가장 큰 ID
-        return it->first + 1;
+        auto it = clientList.rbegin();
+        // std::map은 기본적으로 key 정렬이 오름차순 (가장 작은 key가 앞에 오고, 가장 큰 key가 뒤에 오도록 정렬됨)
+        // rbegin()은 가장 큰 key (최근 고객 ID)에 접근하는 역방향 반복자 reverse iterator로써 가장 큰 ID를 지정함 (이말은 즉, 맨 뒤의 값)
+        // reverse iterator, 나름 고급 용어라 생각함
+
+        return it->first + 1; // it->first → 가장 큰 ID + 1 → 새 ID 생성
     }
 }
 
+// CSV 파일의 각 줄을 안전하게 파싱해서 문자열 벡터로 반환하는 함수
 std::vector<std::string> ClientManager::parseCSV(std::istream& file, char delimiter) {
+    // delimiter → 구분자 (예: ',' 또는 '\t')
     std::string line;
     std::vector<std::string> row;
+    // row → 결과를 담을 벡터 (한 줄이 하나의 벡터로 분할됨)
 
-    if (std::getline(file, line)) {
-        std::stringstream ss(line);
-        std::string cell;
+    if (std::getline(file, line)) { // 한 줄 전체를 읽어옴 (\n 기준)
+        std::stringstream ss(line); // ss → 읽어온 줄을 셀 단위로 나누기 위해 사용
+        std::string cell; // cell → 분할된 각 항목을 임시 저장
 
         while (std::getline(ss, cell, delimiter)) {
+            // std::getline(ss, cell, delimiter) → 구분자 기준으로 자름
             size_t start = cell.find_first_not_of(" \n\r\t");
             size_t end = cell.find_last_not_of(" \n\r\t");
+            // find_first_not_of, find_last_not_of → 앞뒤 공백 제거
             if (start != std::string::npos && end != std::string::npos)
                 row.push_back(cell.substr(start, end - start + 1));
+                // substr(...) → 실제로 공백을 제외한 텍스트만 추출
             else
-                row.push_back(""); // 공백만 있는 경우
+                row.push_back(""); // row.push_back(...) → 결과 벡터에 ...추가; 공백만 있는 경우, 공백 추가
         }
     }
 

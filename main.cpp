@@ -23,7 +23,7 @@ int main() {
         cout << "3. 주문 생성\n";
         cout << "4. 주문 목록 보기\n";
         cout << "5. 주문 환불 처리\n";
-        cout << "6. Genre Starter Set\n";  // ✅ 추가된 메뉴
+        cout << "6. Genre Starter Set\n";
         cout << "7. 종료\n";
         cout << "=============================\n";
         cout << "선택: ";
