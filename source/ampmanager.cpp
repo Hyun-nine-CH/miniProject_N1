@@ -134,10 +134,10 @@ void AmpManager::displayAmp() const { // const 지정 → 이 함수는 amps 벡
         std::cout << "\n코드       | 모델명         | 브랜드     | 가격       | 재고\n";
         std::cout << "------------------------------------------------------------\n";
         for (const auto& a : amps) {
-            std::cout << std::setw(10) << a.getCode() << " | "
-                      << std::setw(12) << a.getModel() << " | "
+            std::cout << std::setw(10) << a.getCode() << " | " // amps 벡터의 모든 앰프를 순회하며 정렬된 표 형태로 출력
+                      << std::setw(12) << a.getModel() << " | " // std::setw(n)은 고정된 너비로 출력하기 위한 조정
                       << std::setw(12) << a.getBrand() << " | "
-                      << std::setw(10) << addComma(a.getPrice()) << " | "
+                      << std::setw(10) << addComma(a.getPrice()) << " | " // addComma()는 숫자에 천 단위 쉼표를 붙이기 위한 함수
                       << std::setw(5) << addComma(a.getStock()) << "\n";
         }
 
@@ -150,10 +150,12 @@ void AmpManager::displayAmp() const { // const 지정 → 이 함수는 amps 벡
         std::cin >> opt;
 
         if (opt == 1) {
-            std::cin.ignore();
+            std::cin.ignore(); // 검색을 위해 키워드를 입력, cin.ignore()으로 앞에서 남아있을 수 있는 개행문자 제거
             std::string keyword;
             std::cout << "검색할 키워드 입력: ";
-            std::getline(std::cin, keyword);
+            std::getline(std::cin, keyword); // getline()을 사용해 띄어쓰기 포함 문자열을 입력
+            // std::getline(istream& x, std::string& y);
+            // 여기서 x는 입력 스트림 객체, 보통은 std::cin 또는 std::ifstream 등이 들어가고, y는 입력받은 문자열을 저장할 std::string 변수입니다.
 
             std::cout << "\n[검색 결과]\n";
             std::cout << "\n코드       | 모델명         | 브랜드     | 가격       | 재고\n";
@@ -161,15 +163,15 @@ void AmpManager::displayAmp() const { // const 지정 → 이 함수는 amps 벡
 
             bool found = false;
             for (const auto& a : amps) {
-                if (a.getModel().find(keyword) != std::string::npos ||
+                if (a.getModel().find(keyword) != std::string::npos || // std::string::find()는 부분 문자열 탐색 → 포함되어 있으면 인덱스 반환, 없으면 npos 반환
                     a.getBrand().find(keyword) != std::string::npos ||
-                    a.getCode().find(keyword) != std::string::npos) {
+                    a.getCode().find(keyword) != std::string::npos) { // 각 앰프에 대해 모델명, 브랜드, 코드 중 하나라도 keyword를 포함하고 있으면 출력
                     std::cout << std::setw(10) << a.getCode() << " | "
                               << std::setw(12) << a.getModel() << " | "
                               << std::setw(12) << a.getBrand() << " | "
                               << std::setw(10) << addComma(a.getPrice()) << " | "
                               << std::setw(5)  << addComma(a.getStock()) << "\n";
-                    found = true;
+                    found = true; // 일치 항목이 있으면 상세 정보 출력 + found = true 설정
                 }
             }
 
@@ -178,7 +180,9 @@ void AmpManager::displayAmp() const { // const 지정 → 이 함수는 amps 벡
             }
 
             std::cout << "\n확인을 했다면 Enter 키를 입력하세요";
-            std::cin.get();
+            std::cin.get(); // std::cin.get();은 버퍼에 문자 하나를 읽기 때문에, 앞에서 std::cin >> 변수;처럼 입력을 받고 나면 입력 후 남은 \n 개행 문자를 읽는 데 사용
+            // 만약, std::getline(x(std::inputStreamObj), y1(string)); 또는 std::cin >> y2(integer);으로 입력을 받았다면, 개행 문자가 남아있어 다음 입력에 영향을 줄 수 있으므로, 이를 제거하기 위해 std::cin.ignore();를 사용
+            // 그리고 나서 입력 대기용 std::cin.get();을 사용하여 사용자가 Enter 키를 누를 때까지 대기
             return; // 검색 결과만 보여주고 종료
 
         } else if (opt == 2) {
@@ -190,14 +194,21 @@ void AmpManager::displayAmp() const { // const 지정 → 이 함수는 amps 벡
 }
 
 const Amp* AmpManager::findByCode(const std::string& code) const{
-    for (auto& a : amps) {
-        if (a.getCode() == code)
-            return &a;
+    // 반환 타입: const Amp* → 찾은 Amp 객체의 상수 포인터 (수정 불가)
+    // 매개변수: const std::string& code → 검색할 앰프 코드, 문자열을 참조로 받아 복사비용 절감
+    // 뒤의 const: → 이 함수는 AmpManager 객체의 멤버들을 수정하지 않겠다는 약속
+    // 해당 함수는 오버로딩된 멤버 함수로, const AmpManager 객체에서도 호출 가능
+    for (auto& a : amps) { // for (auto& a : amps) → amps는 std::vector<Amp> → 각 Amp 객체를 참조(&)로 순회
+        if (a.getCode() == code) // if (a.getCode() == code) → 현재 앰프의 코드가 매개변수로 전달된 코드와 일치하면
+            return &a; // return &a; → 해당 앰프의 주소(포인터)를 반환
     }
-    return nullptr;
+    return nullptr; // 일치하는 앰프가 없으면 널 포인터 반환
 }
 
 Amp* AmpManager::findByCode(const std::string& code) {
+    // 반환 타입: Amp* → 찾은 앰프 객체의 포인터, 수정 가능
+    // const가 붙지 않았기 때문에 AmpManager의 멤버들을 변경 가능한 함수
+    // 앰프의 값을 변경할 필요가 있을 때 사용됨 (예: setStock() 등 호출 가능)
     for (auto& a : amps) {
         if (a.getCode() == code)
             return &a;
