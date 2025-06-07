@@ -5,6 +5,8 @@
 #include <string>
 #include "powersupply.h"
 
+// Accessorymanager.h의 기본 설명과 같다.
+
 class PowerSupplyManager {
 private:
     std::vector<PowerSupply> powersupplies;

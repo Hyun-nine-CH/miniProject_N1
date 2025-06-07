@@ -5,6 +5,8 @@
 #include <string>
 #include "guitar.h"
 
+// Accessorymanager.h의 기본 설명과 같다.
+
 class GuitarManager {
 private:
     std::vector<Guitar> guitars;

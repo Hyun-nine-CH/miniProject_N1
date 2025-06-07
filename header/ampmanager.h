@@ -5,6 +5,8 @@
 #include <string>
 #include "amp.h"
 
+// Accessorymanager.h의 기본 설명과 같다.
+
 class AmpManager {
 private:
     std::vector<Amp> amps;

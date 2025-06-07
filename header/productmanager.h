@@ -10,9 +10,10 @@
 #include "powersupplymanager.h"
 #include "cablemanager.h"
 #include "accessorymanager.h"
+// 각각의 제품군 매니저 클래스를 포함, 이 클래스는 다양한 장비(앰프, 이펙터, 튜너 등) 를 모두 다루기 때문에 전체 포함 필요
 
-namespace ProductSystem {
-class ProductManager {
+namespace ProductSystem { // 전체 제품군은 ProductSystem 아래로 묶어서 이름 충돌 방지 + 구조화
+class ProductManager { // 앰프, 케이블, 기타, 이펙터 등 모든 제품군을 총괄 관리하는 클래스
 private:
     GuitarManager guitarManager;
     EffectManager effectManager;
@@ -21,10 +22,11 @@ private:
     PowerSupplyManager powerSupplyManager;
     CableManager cableManager;
     AccessoryManager accessoryManager;
+    // 각 제품군 매니저들을 객체로 보유 → 객체가 포함되어 있기 때문에 생성자에서 자동 초기화
 
 public:
-    ProductManager();
-    ~ProductManager();
+    ProductManager(); // 파일 로딩/초기화 등을 위한 생성자
+    ~ProductManager(); // 소멸자에서는 필요시 정리 작업 가능
 
     void saveToFile();                     // 각 제품군 파일로 저장
     void loadFromFile();                   // 각 제품군 파일로부터 로드
@@ -51,7 +53,11 @@ public:
     AccessoryManager& getAccessoryManager() { return accessoryManager; }
     const AccessoryManager& getAccessoryManager() const { return accessoryManager; }
 
+    // 각 제품군을 외부에서 접근할 수 있도록 참조 반환
+    // const 버전과 비-const 버전을 함께 제공해서 사용 상황에 맞게 사용 가능
+
 };
 }
+// 이 클래스는 OrderManager, GenreStarterSet 등과 연계하여 제품 조회/주문의 중심 역할을 수행
 
 #endif // PRODUCTMANAGER_H

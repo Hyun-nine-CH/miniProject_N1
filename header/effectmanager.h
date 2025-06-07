@@ -5,6 +5,8 @@
 #include <string>
 #include "effect.h"
 
+// Accessorymanager.h의 기본 설명과 같다.
+
 class EffectManager {
 private:
     std::vector<Effect> effects;

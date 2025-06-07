@@ -5,6 +5,8 @@
 #include <string>
 #include "tuner.h"
 
+// Accessorymanager.h의 기본 설명과 같다.
+
 class TunerManager {
 private:
     std::vector<Tuner> tuners;

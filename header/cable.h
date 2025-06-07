@@ -6,6 +6,7 @@
 // Accessory.h의 기본 설명과 같다.
 
 class Cable : public SubProduct {
+    // Amp, Tuner, PowerSupply, Cable와 같은 제품군은 공통적으로 code, model, brand, price, stock 멤버 변수를 가지며, 내용은 같다.
 public:
     Cable() = default;
 

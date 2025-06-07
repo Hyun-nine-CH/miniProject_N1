@@ -5,6 +5,8 @@
 #include <string>
 #include "cable.h"
 
+// Accessorymanager.h의 기본 설명과 같다.
+
 class CableManager {
 private:
     std::vector<Cable> cables;
