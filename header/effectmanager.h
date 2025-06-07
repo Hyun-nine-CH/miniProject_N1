@@ -12,9 +12,6 @@ private:
 public:
     EffectManager();
 
-//    void loadFromFile(const std::string& filename = "data/pdList_effects.txt");
-//    void saveToFile(const std::string& filename = "data/pdList_effects.txt") const;
-
     void loadFromFile();
     void saveToFile() const;
 

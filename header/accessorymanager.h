@@ -12,9 +12,6 @@ private:
 public:
     AccessoryManager();
 
-//    void loadFromFile(const std::string& filename = "data/pdList_accessories.txt");
-//    void saveToFile(const std::string& filename = "data/pdList_accessories.txt") const;
-
     void loadFromFile();
     void saveToFile() const;
 

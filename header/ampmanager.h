@@ -15,9 +15,6 @@ public:
     void loadFromFile();
     void saveToFile() const;
 
-//    void loadFromFile(const std::string& filename = "data/pdList_amps.txt");
-//    void saveToFile(const std::string& filename = "data/pdList_amps.txt") const;
-
     void inputAmp();    // 콘솔 입력
     void deleteAmp();   // 코드 기준 삭제
     void displayAmp() const;

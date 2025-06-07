@@ -12,9 +12,6 @@ private:
 public:
     CableManager();  
 
-//    void loadFromFile(const std::string& filename = "data/pdList_cables.txt");
-//    void saveToFile(const std::string& filename = "data/pdList_cables.txt") const;
-
     void loadFromFile();
     void saveToFile() const;
 

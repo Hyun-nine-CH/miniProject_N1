@@ -16,9 +16,6 @@ public:
     void saveToFile() const;
     // 파일 이름을 인자로 받는 오버로딩된 함수
 
-//    void loadFromFile(const std::string& filename = "data/pdList_tuners.txt");
-//    void saveToFile(const std::string& filename = "data/pdList_tuners.txt") const;
-
     void inputTuner();    // 콘솔 입력
     void deleteTuner();   // 코드 기준 삭제
     void displayTuner() const;

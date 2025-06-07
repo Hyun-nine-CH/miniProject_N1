@@ -14,7 +14,11 @@ protected:
     // 캡슐화 원칙을 지키면서도 Amp, Tuner, Accessory 등 파생 클래스 구현하여 편의성 확보에 기여하였다.
 
 public:
-    SubProduct() = default; // 디폴트 생성자로 파일 입출력 시 필요할 수 있어서 추가하였다.
+    SubProduct() = default;
+    // 디폴트 생성자로 파일 입출력 시 필요할 수 있어서 추가하였다.
+    // 다른 생성자(예: Accessory(code, model, purpose, price, stock))를 정의해놓으면 컴파일러는 자동으로 기본 생성자를 만들어주지 않아 별도로 사용
+    // 객체를 비워서 만들 필요가 있을 때, 파일에서 불러올 때, STL 컨테이너(vector, map 등)에서 객체 생성을 위해 필요하므로 사용
+    
     SubProduct(const std::string& code,
                const std::string& model,
                const std::string& brand,
