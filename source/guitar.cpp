@@ -1,5 +1,7 @@
 #include "guitar.h"
 
+// accessory.cpp의 기본 설명과 같다.
+
 Guitar::Guitar(const std::string& code,
                const std::string& model,
                const std::string& brand,

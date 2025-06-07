@@ -32,7 +32,7 @@ bool OrderManager::createOrder(int clientId, const std::string& productCode, int
                                ClientSystem::ClientManager& clientManager, ProductSystem::ProductManager& productManager) {
     Client* client = clientManager.findClientById(clientId);
     if (!client) {
-        std::cerr << "❌ 존재하지 않는 고객입니다.\n";
+        std::cerr << "\n존재하지 않는 고객입니다.\n";
         return false;
     }
 
@@ -71,7 +71,7 @@ bool OrderManager::createOrder(int clientId, const std::string& productCode, int
     }
 
     if (!success) {
-        std::cerr << "❌ 존재하지 않거나 재고가 부족한 제품입니다.\n";
+        std::cerr << "\n존재하지 않거나 재고가 부족한 제품입니다.\n";
         return false;
     }
 
@@ -80,7 +80,7 @@ bool OrderManager::createOrder(int clientId, const std::string& productCode, int
     orders.push_back(order);
     saveToFile();
 
-    std::cout << "✅ 주문이 완료되었습니다.\n";
+    std::cout << "\n주문이 완료되었습니다.\n";
     return true;
 }
 
@@ -115,10 +115,10 @@ bool OrderManager::refundOrder(int orderId, ProductSystem::ProductManager& produ
 
     if (anyRefunded) {
         saveToFile();
-        std::cout << "✅ 묶음 주문 전체 환불이 완료되었습니다.\n";
+        std::cout << "\n묶음 주문 전체 환불이 완료되었습니다.\n";
         return true;
     } else {
-        std::cerr << "❌ 해당 주문번호의 환불 가능한 항목이 없습니다.\n";
+        std::cerr << "\n해당 주문번호의 환불 가능한 항목이 없습니다.\n";
         return false;
     }
 }
@@ -257,7 +257,7 @@ void OrderManager::showAllOrders(const ClientSystem::ClientManager& clientManage
             }
 
             if (!found) {
-                std::cout << "일치하는 항목이 없습니다.\n";
+                std::cout << "\n일치하는 항목이 없습니다.\n";
             }
 
             std::cout << "\n확인을 했다면 Enter 키를 입력하세요";
@@ -267,7 +267,7 @@ void OrderManager::showAllOrders(const ClientSystem::ClientManager& clientManage
         } else if (opt == 2) {
             return;
         } else {
-            std::cout << "잘못된 선택입니다.\n";
+            std::cout << "\n잘못된 선택입니다.\n";
         }
     }
 }

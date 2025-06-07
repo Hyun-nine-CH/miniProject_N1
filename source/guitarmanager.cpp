@@ -4,6 +4,8 @@
 #include <sstream>
 #include <iomanip>
 
+// ampmanager.cpp의 기본 설명과 같다.
+
 const std::string GUITAR_FILE = "data/pdList_guitars.txt";
 
 inline std::string addComma(int number) {

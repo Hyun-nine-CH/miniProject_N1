@@ -54,7 +54,7 @@ bool ProductManager::displayMenu() {
         case 7: return accessoryManager.displayMenu();
         case 8: return false;
         default:
-            std::cout << "잘못된 선택입니다.\n";
+            std::cout << "\n잘못된 선택입니다.\n";
             return true;
     }
 }

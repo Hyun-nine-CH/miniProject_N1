@@ -1,5 +1,7 @@
 #include "tuner.h"
 
+// amp.cpp의 기본 설명과 같다.
+
 Tuner::Tuner(const std::string& code,
              const std::string& model,
              const std::string& brand,

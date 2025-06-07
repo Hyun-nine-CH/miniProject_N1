@@ -4,7 +4,8 @@
 #include <sstream>
 #include <iomanip>
 
-// ✅ 파일 경로 상수 추가
+// ampmanager.cpp의 기본 설명과 같다.
+
 const std::string EFFECT_FILE = "data/pdList_effects.txt";
 
 inline std::string addComma(int number) {
@@ -15,7 +16,7 @@ inline std::string addComma(int number) {
 }
 
 EffectManager::EffectManager() {
-    loadFromFile(); // ✅ 파일명 명시 제거
+    loadFromFile();
 }
 
 void EffectManager::loadFromFile() {
@@ -77,7 +78,7 @@ void EffectManager::inputEffect() {
     std::cin.ignore(); // 버퍼 초기화
 
     effects.emplace_back(code, model, brand, effectType, price, stock);
-    saveToFile(); // ✅ 저장
+    saveToFile();
 }
 
 void EffectManager::deleteEffect() {
@@ -91,7 +92,7 @@ void EffectManager::deleteEffect() {
     if (it != effects.end()) {
         effects.erase(it, effects.end());
         std::cout << "삭제되었습니다.\n";
-        saveToFile(); // ✅ 저장
+        saveToFile();
     } else {
         std::cout << "해당 코드를 찾을 수 없습니다.\n";
     }

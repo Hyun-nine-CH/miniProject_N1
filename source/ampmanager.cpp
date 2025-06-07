@@ -14,7 +14,7 @@ inline std::string addComma(int number) {
     oss << std::fixed << number;
     // 여기서 fixed는 double 또는 float과 같은 부동소수점 숫자가 과학적 표기법이 아닌 소수점 이하 자릿수가 고정된 일반적인 표기법으로 출력하게 하는 함수
     return oss.str();
-}
+} // inline은 짧고 자주 호출되는 함수의 호출 비용을 줄이기 위해, 컴파일러에게 해당 함수의 본문을 함수 호출 부분에 직접 삽입하도록 지시하는 키워드
 
 AmpManager::AmpManager() {
     loadFromFile();
