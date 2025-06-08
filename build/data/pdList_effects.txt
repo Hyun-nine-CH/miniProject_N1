@@ -1,10 +1,10 @@
 EFF001,OverdriveBoost,Line 6,Compressor,138274,23
 EFF002,EQMaster,Line 6,Looper,141499,23
-EFF003,DistortionX,Walrus Audio,Reverb,436333,40
+EFF003,DistortionX,Walrus Audio,Reverb,436333,39
 EFF004,EQMaster,Behringer,Compressor,214327,42
 EFF005,LooperLoop,TC Electronic,EQ,241635,45
 EFF006,FlangerJet,Mooer,Reverb,453502,47
-EFF007,ChorusDream,Mooer,Chorus,226151,26
+EFF007,ChorusDream,Mooer,Chorus,226151,25
 EFF008,ChorusDream,Mooer,EQ,356473,34
 EFF009,PhaserWave,Zoom,Looper,170353,37
 EFF010,ChorusDream,Walrus Audio,Reverb,123514,24
@@ -97,4 +97,4 @@ EFF096,EQMaster,Walrus Audio,Reverb,121008,24
 EFF097,EQMaster,Electro-Harmonix,Compressor,332929,34
 EFF098,EQMaster,TC Electronic,EQ,319316,26
 EFF099,CompressorPro,Strymon,Chorus,341880,44
-EFF100,PhaserWave,MXR,EQ,206171,20
+EFF100,PhaserWave,MXR,EQ,206171,19

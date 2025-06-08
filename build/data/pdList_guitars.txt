@@ -1,6 +1,6 @@
 GTR001,Explorer,ESP,Superstrat,872637,15
 GTR002,RG,Ibanez,Hollow,1712486,25
-GTR003,Flying V,Schecter,Superstrat,2043700,30
+GTR003,Flying V,Schecter,Superstrat,2043700,29
 GTR004,Explorer,Gretsch,Telecaster,2890039,24
 GTR005,Soloist,Yamaha,Semi-Hollow,886152,14
 GTR006,Les Paul,Gibson,Hollow,1414189,30
