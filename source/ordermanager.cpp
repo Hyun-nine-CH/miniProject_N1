@@ -5,16 +5,22 @@
 #include <ctime>
 #include <iomanip>
 #include <algorithm>
+// 필요한 표준 라이브러리 포함: 파일 I/O, 문자열 스트림, 시간 처리, 출력 포맷 등을 위해 사용
 
-namespace OrderSystem {
-const std::string ORDER_FILE = "data/orderlist.txt";
+namespace OrderSystem { // OrderSystem이라는 네임스페이스 안에서 모든 코드가 정의됨
+const std::string ORDER_FILE = "data/orderlist.txt"; // 주문 데이터 저장 위치를 문자열 상수로 정의
 
+// 숫자에 3자리마다 ","를 찍어주는 함수를 추가했는데, 한국인들의 눈에 맞게 숫자를 읽기 쉽게 하기 위함으로 추가한 것이다.
+// 다만, 입력할 때는 ","를 찍지 않고 입력받아야 하므로, 출력할 때만 나타나도록 구현했다.
 inline std::string addComma(int number) {
-    std::ostringstream oss;
+    std::ostringstream oss; // ostringstream은 문자열에 데이터를 포맷팅하여 저장할 때 사용
     oss.imbue(std::locale(""));
+    // imbue()는 스트림(std::ostringstream, std::cin, std::cout 등)에 새로운 지역(locale)을 설정하는 함수
+    // std::locale("")는 현재 시스템의 로케일을 사용하여 숫자 형식(예: 천 단위 구분 기호)을 설정
     oss << std::fixed << number;
+    // 여기서 fixed는 double 또는 float과 같은 부동소수점 숫자가 과학적 표기법이 아닌 소수점 이하 자릿수가 고정된 일반적인 표기법으로 출력하게 하는 함수
     return oss.str();
-}
+} // inline은 짧고 자주 호출되는 함수의 호출 비용을 줄이기 위해, 컴파일러에게 해당 함수의 본문을 함수 호출 부분에 직접 삽입하도록 지시하는 키워드
 
 OrderManager::OrderManager() : nextOrderId(1), currentBundleOrderId(0) {
     loadFromFile();

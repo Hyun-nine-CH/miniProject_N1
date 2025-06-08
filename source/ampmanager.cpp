@@ -6,6 +6,8 @@
 
 const std::string AMP_FILE = "data/pdList_amps.txt";
 
+// 숫자에 3자리마다 ","를 찍어주는 함수를 추가했는데, 한국인들의 눈에 맞게 숫자를 읽기 쉽게 하기 위함으로 추가한 것이다.
+// 다만, 입력할 때는 ","를 찍지 않고 입력받아야 하므로, 출력할 때만 나타나도록 구현했다.
 inline std::string addComma(int number) {
     std::ostringstream oss; // ostringstream은 문자열에 데이터를 포맷팅하여 저장할 때 사용
     oss.imbue(std::locale(""));
