@@ -148,27 +148,35 @@ void GenreStarterSet::processGenreSelection(int genreId, ClientManager* clientMa
     // 전체 프로세스가 끝나면 사용자에게 주문 완료 알림
 }
 
+// 바로 아래의 두 함수는 각각 .txt 파일에 저장된 기타/이펙터 제품 목록에서 특정 타입 조건을 만족하는 항목만 출력하는 역할을 수행함
 void GenreStarterSet::loadGuitarMatches(const string& type) {
-    ifstream file(GUITAR_FILE);
+    // 입력된 type 문자열이 포함된 기타 제품만 필터링해서 출력하는 함수
+    // 예를 들면, type = "Les Paul" 이면 "타입" 칼럼에 "Les Paul"이 포함된 제품만 출력
+    ifstream file(GUITAR_FILE); // ifstream으로 기타 목록 파일 열기
     string line;
-    while (getline(file, line)) {
+    while (getline(file, line)) { // 파일을 한 줄씩 읽어서 line에 저장, 각 line은 하나의 제품 정보를 담은 CSV 데이터
         vector<string> tokens;
         stringstream ss(line);
         string item;
         while (getline(ss, item, ',')) tokens.push_back(item);
-        if (tokens.size() >= 6 && tokens[3].find(type) != string::npos) {
+        // stringstream으로 line에 대해 ","을 기준으로 쪼개서 tokens 벡터에 저장
+        if (tokens.size() >= 6 && tokens[3].find(type) != string::npos) { // → 부분일치 검색
             cout << setw(10) << tokens[0] << " | "
                  << setw(15) << tokens[1] << " | "
                  << setw(12) << tokens[2] << " | "
                  << setw(13) << tokens[3] << " | "
                  << setw(10) << addComma(stoi(tokens[4])) << " | "
                  << setw(6) << addComma(stoi(tokens[5])) << endl;
-        }
+        } // tokens[3]은 제품 타입 칼럼 (예시: "Superstrat"), 입력된 type이 이 문자열에 포함되어 있으면 출력
     }
-    file.close();
+    // 예를 들면, GTR001,Stratocaster,Fender,Superstrat,2090000,7
+    // → tokens[0] = "GTR001", tokens[1] = "Stratocaster", ... tokens[5] = "7"
+    file.close(); // 명시적으로 파일 닫기
 }
 
 void GenreStarterSet::loadEffectMatches(const vector<string>& types) {
+    // types는 추천 이펙터 타입들의 벡터 (예: { "EQ", "Reverb", "Distortion" })
+    // 이 중 하나라도 == 일치하는 제품을 pdList_effects.txt에서 찾아 출력
     ifstream file(EFFECT_FILE);
     string line;
     while (getline(file, line)) {
@@ -176,9 +184,11 @@ void GenreStarterSet::loadEffectMatches(const vector<string>& types) {
         stringstream ss(line);
         string item;
         while (getline(ss, item, ',')) tokens.push_back(item);
+        // pdList_effects.txt에서 한 줄씩 읽고, 쉼표(",") 기준으로 쪼개어 tokens에 저장
         if (tokens.size() >= 6) {
             for (const auto& t : types) {
-                if (tokens[3] == t) {
+                if (tokens[3] == t) { // 이펙터 타입(tokens[3])이 types 목록 중 하나와 정확히 일치하면 출력
+                    // == 비교이므로 부분 일치가 아니라 완전 일치
                     cout << setw(10) << tokens[0] << " | "
                          << setw(15) << tokens[1] << " | "
                          << setw(12) << tokens[2] << " | "
@@ -193,26 +203,41 @@ void GenreStarterSet::loadEffectMatches(const vector<string>& types) {
     file.close();
 }
 
+// 바로 아래의 두 함수는 실제로 사용자가 기타 및 이펙터 제품을 주문하는 입력 모션에 대한 기능
 void GenreStarterSet::createGuitarOrder(ClientManager* clientManager, ProductManager* productManager, OrderManager* orderManager) {
+    // 사용자가 특정 일렉기타 제품을 선택해서 주문하는 함수
+    // ClientManager, ProductManager, OrderManager는 주문 유효성 확인 및 처리에 필요
     int cid; string code; int qty;
     cout << "고객 ID: "; cin >> cid;
     cout << "제품 코드: "; cin >> code;
     cout << "수량: "; cin >> qty;
     orderManager->createOrder(cid, code, qty, *clientManager, *productManager);
+    /*
+    고객이 존재하는지 확인
+    제품 코드가 유효한지 확인
+    재고가 충분한지 확인
+    유효하면 재고 차감 및 주문 생성
+    *clientManager / *productManager는 객체 참조 전달
+    */
 }
 
 void GenreStarterSet::createEffectOrders(const vector<string>& types, ClientManager* clientManager, ProductManager* productManager, OrderManager* orderManager) {
+    // 장르에 따른 여러 이펙터 타입에 대한 반복 주문 입력 처리
+    // types: 이펙터 타입 리스트 (예시: {"Reverb", "Overdrive", "EQ"})
     int cid;
-    cout << "고객 ID: "; cin >> cid;
-    cin.ignore();
-    for (size_t i = 0; i < types.size(); ++i) {
+    cout << "고객 ID: "; cin >> cid; // 고객 ID를 먼저 입력받음
+    cin.ignore(); // 개행(\n) 문자와 같은 버퍼 정리
+    for (size_t i = 0; i < types.size(); ++i) { // 추천된 이펙터 타입 수만큼 반복
+        // 이펙터 타입을 출력하여 사용자에게 어떤 제품인지 힌트를 주고, 제품 코드와 수량을 입력받음
         string code;
         int qty;
         cout << types[i] << " 제품 코드: ";
-        getline(cin, code);
+        getline(cin, code); // 띄워쓰기 포함하기 위한 장점을 가진 getline() 함수 사용
         cout << types[i] << " 수량: ";
         cin >> qty;
-        cin.ignore();
+        cin.ignore(); // 다시 cin.ignore()로 다음 입력 대비 버퍼 정리
         orderManager->createOrder(cid, code, qty, *clientManager, *productManager);
+        // 각 이펙터에 대해 개별 주문 생성 요청
+        // OrderManager 내부에서 재고, 유효성, 오류 메시지 처리까지 수행
     }
 }
